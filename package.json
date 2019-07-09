@@ -1,0 +1,22 @@
+{
+  "name": "embark-blockchain-plugin-demo",
+  "version": "4.1.0-beta.2",
+  "description": "Basic DApp template for Embark",
+  "homepage": "https://github.com/embark-framework/embark/tree/master/dapps/templates/boilerplate#readme",
+  "bugs": "https://github.com/embark-framework/embark/issues",
+  "scripts": {
+    "test": "embark test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "directory": "dapps/templates/boilerplate",
+    "type": "git",
+    "url": "https://github.com/embark-framework/embark.git"
+  },
+  "devDependencies": {
+    "embark-lightchain": "^0.0.1",
+    "embarkjs-connector-web3": "^4.1.0-beta.2"
+  }
+}
