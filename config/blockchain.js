@@ -11,7 +11,14 @@ module.exports = {
     client: "lightchain",
     clientConfig: {
       miningMode: 'dev' // Mode in which the node mines. Options: dev, auto, always, off
-    }
+    },
+    accounts: [
+      {
+        nodeAccounts: true, // Accounts use for the node
+        numAddresses: "1", // Number of addresses/accounts (defaults to 1)
+        password: "config/development/password_lightchain" // Password file for the accounts
+      }
+    ]
   },
 
   privatenet: {

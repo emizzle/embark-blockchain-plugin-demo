@@ -9,6 +9,7 @@ module.exports = {
   // default environment, merges with the settings in default
   // assumed to be the intended environment by `embark run`
   development: {
+    enabled: false,
     connection: {
       host: "localhost", // Host of the blockchain node
       port: 8546, // Port of the blockchain node
