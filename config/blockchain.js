@@ -4,50 +4,16 @@ module.exports = {
   // default applies to all environments
   default: {
     enabled: true,
-    client: "geth" // Can be geth or parity (default:geth)
+    client: "lightchain" // Enabled using the `embark-lightchain` plugin
   },
 
   development: {
-    client: "lightchain",
     clientConfig: {
-      miningMode: 'dev' // Mode in which the node mines. Options: dev, auto, always, off
+      // tmt_p2p_port: 26656,
+      // tmt_rpc_port: 26657,
+      // tmt_proxy_port: 26658
     },
-    accounts: [
-      {
-        nodeAccounts: true, // Accounts use for the node
-        numAddresses: "1", // Number of addresses/accounts (defaults to 1)
-        password: "config/development/password_lightchain" // Password file for the accounts
-      }
-    ]
-  },
-
-  privatenet: {
-    // Accounts to use as node accounts
-    // The order here corresponds to the order of `web3.eth.getAccounts`, so the first one is the `defaultAccount`
-    // For more account configurations, see: https://embark.status.im/docs/blockchain_accounts_configuration.html
-    accounts: [
-      {
-        nodeAccounts: true, // Accounts use for the node
-        numAddresses: "1", // Number of addresses/accounts (defaults to 1)
-        password: "config/development/password" // Password file for the accounts
-      }
-    ],
-    clientConfig: {
-      datadir: ".embark/privatenet/datadir", // Data directory for the databases and keystore
-      miningMode: 'auto',
-      genesisBlock: "config/privatenet/genesis.json" // Genesis block to initiate on first creation of a development node
-    }
-  },
-
-  privateparitynet: {
-    client: "parity",
-    genesisBlock: "config/privatenet/genesis-parity.json",
-    datadir: ".embark/privatenet/datadir",
-    miningMode: 'off'
-  },
-
-  externalnode: {
-    endpoint: "URL_OF_THE_NODE", // Endpoint of an node to connect to. Can be on localhost or on the internet
+    /*
     accounts: [
       {
         mnemonic: "YOUR_MNEMONIC",
@@ -55,28 +21,15 @@ module.exports = {
         numAddresses: "1"
       }
     ]
+    */
   },
 
   testnet: {
-    networkType: "testnet", // Can be: testnet(ropsten), rinkeby, livenet or custom, in which case, it will use the specified networkId
-    syncMode: "light",
-    accounts: [
-      {
-        nodeAccounts: true,
-        password: "config/testnet/password"
-      }
-    ]
+    networkType: "testnet", // Can be: standalone, sirius/testnet/ropsten/rinkeby/kovan, livenet/mainnet
   },
 
   livenet: {
-    networkType: "livenet",
-    syncMode: "light",
-    accounts: [
-      {
-        nodeAccounts: true,
-        password: "config/livenet/password"
-      }
-    ]
+    networkType: "livenet"
   }
 
   // you can name an environment with specific settings and then specify with
